@@ -25,3 +25,8 @@ If you are developing a production application, we recommend updating the config
 - Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
 - Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
 - Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+
+## TUTORIEL MEGA DUR POUR LANCER LA CONNEXION A LA BASE DE DONNEE :
+
+- Lancer un 1er terminal et executer la commande : npm run dev ( Lancement de l'app React sur le port 5173 )
+- lancer un 2eme terminal et executer la commande : node connexion.ts ( Lancement du seveur express pour accéder à la BDD sur le port 3000 )
