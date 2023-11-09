@@ -1,0 +1,5 @@
+.Searchbar{
+    width: 18%;
+    height: calc(100% - 3rem);
+    background-color: red;
+}

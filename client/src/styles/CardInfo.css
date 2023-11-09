@@ -1,0 +1,5 @@
+.CardInfo{
+    width: 30%;
+    height: calc(100% - 3rem);
+    background-color: red;
+}
