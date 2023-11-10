@@ -1,7 +1,14 @@
 import "../styles/Deck.css"
+import MainDeck from "./MainDeck"
+import ExtraDeck from "./ExtraDeck"
+
+
 function Deck() {
   return (
-    <div className='Deck'></div>
+    <div className="Deck">
+        <MainDeck />
+        <ExtraDeck />
+    </div>
   )
 }
 
