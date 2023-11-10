@@ -1,4 +1,6 @@
 import "../styles/Searchbar.css"
+import SearchForm from "./SearchForm"
+import SearchItem from "./SearchItem"
 
 interface SearchbarProps {
   cards?: any
@@ -7,20 +9,11 @@ interface SearchbarProps {
 function Searchbar({ cards }: SearchbarProps) {
   return (
     <div className='Searchbar'>
-      <div className="SearchForm">
-        <input type="text" />
-        <button>Search</button>
-      </div>
+      <SearchForm />
       <div className="SearchResults">
         {cards ? cards.map((card: any) => {
           return (
-            <div className="SearchItem">
-              <img src={""} alt={""} />
-              <div className="CardInfo">
-                <h3>{card.name}</h3>
-              </div>
-              <button>Add to Deck</button>
-            </div>
+            <SearchItem />
           )
         })
           :
