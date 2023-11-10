@@ -13,7 +13,7 @@ function Searchbar({ cards }: SearchbarProps) {
       <div className="SearchResults">
         {cards ? cards.map((card: any) => {
           return (
-            <SearchItem />
+            <SearchItem card={card} />
           )
         })
           :

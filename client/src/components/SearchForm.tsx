@@ -1,11 +1,23 @@
+import { useState, useRef, useEffect } from 'react';
 
 function SearchForm() {
-    return (
-        <div className="SearchForm">
-            <input type="text" />
-            <button>Search</button>
-        </div>
-    )
+  const inputRef = useRef<HTMLInputElement>(null);
+  const [search, setSearch] = useState('');
+
+  useEffect(() => {
+    console.log(search);
+  }, [search]); // This useEffect will run whenever the 'search' state changes
+
+  function handleSearch() {
+    setSearch(inputRef.current?.value || '');
+  }
+
+  return (
+    <form className="SearchForm">
+      <input ref={inputRef} type="text" />
+      <button onClick={handleSearch}>Search</button>
+    </form>
+  );
 }
 
-export default SearchForm
+export default SearchForm;
