@@ -13,6 +13,7 @@ header {
   background-color: transparent;
   border: 1px solid rgba(255, 255, 255, 0.558);
   border-radius: 5px;
+  max-height: calc(100vh - var(--header-height) - 20px);
 }
 .CardInfo{
   grid-area: CardInfo;
