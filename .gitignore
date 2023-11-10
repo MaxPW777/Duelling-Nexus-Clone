@@ -150,3 +150,4 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+*.sql
