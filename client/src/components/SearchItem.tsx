@@ -1,18 +1,21 @@
-import { Carte } from "../interfaces/carte"
+import Carte from "../interfaces/carte"
 
 interface SearchItemProps {
   card?: Carte
 }
 
 function SearchItem({ card }: SearchItemProps) {
+
   return (
-    <div className="SearchItem">
-      <img src={""} alt={""} />
+    <button  className="SearchItem">
+      
+      <img src={card?.image} alt={card?.Name + "image"} />
       <div className="CardInfo">
         <h3>{card?.Name}</h3>
+        <p>{card?.Atk}</p>
+        <p>{card?.Def}</p>
       </div>
-      <button>Add to Deck</button>
-    </div>
+    </button>
   )
 }
 

@@ -1,4 +1,4 @@
-export interface Carte {
+export default interface Carte {
   ID: number;
   Name: string;
   Type: string;

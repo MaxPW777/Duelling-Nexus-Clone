@@ -1,9 +1,9 @@
 import "../styles/Searchbar.css"
 import SearchForm from "./SearchForm"
 import SearchItem from "./SearchItem"
-
+import Carte from "../interfaces/carte"
 interface SearchbarProps {
-  cards?: any
+  cards?: Carte[]
 }
 
 function Searchbar({ cards }: SearchbarProps) {
