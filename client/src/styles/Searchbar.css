@@ -18,4 +18,5 @@ input{
     width: 100%;
     height: 1rem;
     outline: none;
+    grid-area: Searchbar;
 }

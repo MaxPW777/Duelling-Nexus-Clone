@@ -9,9 +9,13 @@ body {
 #root{
   width: 100%;
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: grid; 
+  grid-template-columns: 2fr 3fr 1fr; 
+  grid-template-rows: 4em auto; 
+  grid-template-areas: 
+    "header header header"
+    "CardInfo Deck Searchbar"; 
+  gap: 0 1rem;
 }
 
 *{
