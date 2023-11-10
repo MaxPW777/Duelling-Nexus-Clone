@@ -5,17 +5,8 @@
 
 header {
   height: var(--header-height);
-  width: 100%;
   background-color: var(--secondary-color);
-  margin-bottom: 1rem;
-}
-
-.content {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  width: 100%;
-  height: calc(100% - var(--header-height));
+  grid-area: header;
 }
 
 .Deck,
@@ -24,8 +15,13 @@ header {
   background-color: transparent;
   border: 1px solid rgba(255, 255, 255, 0.558);
   border-radius: 5px;
-  flex: 30%;
-  height: 100%;
+}
+.CardInfo{
+  grid-area: CardInfo;
+}
+
+.Deck{
+  grid-area: Deck;
 }
 
 @media only screen and (max-width: 600px) {

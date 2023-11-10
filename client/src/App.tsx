@@ -8,12 +8,10 @@ function App() {
 
   return (
     <>
-    <Header />
-    <div className="content">
+      <Header />
       <CardInfo />
       <Deck />
       <Searchbar />
-    </div>
     </>
   )
 }
