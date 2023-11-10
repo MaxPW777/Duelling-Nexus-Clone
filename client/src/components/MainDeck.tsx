@@ -1,9 +1,35 @@
-import '../styles/MainDeck.css'
+import React, { useEffect, useState } from 'react';
+import '../styles/MainDeck.css';
 
 function MainDeck() {
+  const [cards, setCards] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await fetch('http://localhost:3001/');
+        const data = await res.json();
+        setCards(data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  // Si les données ne sont pas disponibles, n'affichez pas le composant
+  if (!cards || cards.length === 0) {
+    return null;
+  }
+
+  console.log(cards[0]);
+
   return (
-    <div className='MainDeck'>MainDeck</div>
-  )
+    <div className='MainDeck'>
+      {/* Votre rendu de composant ici */}
+    </div>
+  );
 }
 
-export default MainDeck
+export default MainDeck;
