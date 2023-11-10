@@ -1,7 +1,4 @@
-:root{
-    --secondary-color: darkslategray;
-    --header-height: 3rem;
-}
+
 
 header {
   height: var(--header-height);

@@ -3,15 +3,15 @@ import SearchForm from "./SearchForm"
 import SearchItem from "./SearchItem"
 import Carte from "../interfaces/carte"
 interface SearchbarProps {
-  cards?: Carte[]
+  cartes?: Carte[]
 }
 
-function Searchbar({ cards }: SearchbarProps) {
+function Searchbar({ cartes }: SearchbarProps) {
   return (
     <div className='Searchbar'>
       <SearchForm />
       <div className="SearchItems">
-        {cards ? cards.map((card: any) => {
+        {cartes ? cartes.map((card: any) => {
           return (
             <SearchItem card={card} />
           )
