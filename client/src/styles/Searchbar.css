@@ -1,22 +1,20 @@
 .Searchbar{
-    flex: 20%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    grid-area: Searchbar;
 }
 
-.SearchForm{
+form{
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
-    width: 100%;
-    margin: 0 1rem;
-}
-
-input{
+    justify-content: space-around;
     width: 100%;
     height: 1rem;
     outline: none;
-    grid-area: Searchbar;
+}
+
+.SearchItems{
+    margin-top: 1rem;
 }

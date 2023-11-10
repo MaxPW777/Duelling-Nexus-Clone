@@ -1,22 +1,20 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef } from 'react';
 
 function SearchForm() {
   const inputRef = useRef<HTMLInputElement>(null);
   const [search, setSearch] = useState('');
 
-  useEffect(() => {
-    console.log(search);
-  }, [search]); // This useEffect will run whenever the 'search' state changes
-
-  function handleSearch() {
+  function handleSearch(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault(); // Prevent the default form submission behavior
     setSearch(inputRef.current?.value || '');
   }
 
   return (
-    <form className="SearchForm">
-      <input ref={inputRef} type="text" />
-      <button onClick={handleSearch}>Search</button>
-    </form>
+      <form onSubmit={handleSearch}>
+        <input ref={inputRef} type="text" />
+        <button type="submit">Search</button>
+      </form>
+    
   );
 }
 

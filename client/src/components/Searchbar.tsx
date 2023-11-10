@@ -10,7 +10,7 @@ function Searchbar({ cards }: SearchbarProps) {
   return (
     <div className='Searchbar'>
       <SearchForm />
-      <div className="SearchResults">
+      <div className="SearchItems">
         {cards ? cards.map((card: any) => {
           return (
             <SearchItem card={card} />
