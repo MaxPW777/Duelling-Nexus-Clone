@@ -4,10 +4,19 @@ import Deck from './components/Deck'
 import Header from './components/Header'
 import Searchbar from './components/Searchbar'
 import Carte from './interfaces/carte'
+import { useEffect, useState } from 'react'
 
-const cartes: Carte[] = [{ Name: "test", Atk: 0, Def: 0, image: "test", ID: 0, Type: "prisonnier", Description: "floppy", Rarete: "commune"}]
+
+
 
 function App() {
+
+  const [cartes, setCartes] = useState<Carte[]>([])
+  useEffect(() => {
+    fetch('http://localhost:3001/')
+      .then(res => res.json())
+      .then(data => setCartes(data))
+  }, [])
 
   return (
     <>

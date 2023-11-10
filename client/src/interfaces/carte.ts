@@ -1,6 +1,6 @@
 export default interface Carte {
   ID: number;
-  Name: string;
+  Nom: string;
   Type: string;
   Atk: number;
   Def: number;
