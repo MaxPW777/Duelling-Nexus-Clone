@@ -1,5 +1,3 @@
 .Deck{
-    width: 46%;
-    height: calc(100% - 3rem);
-    background-color: red;
+    margin: 0 1rem;
 }
