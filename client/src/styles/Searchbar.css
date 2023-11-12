@@ -1,41 +1,80 @@
-.Searchbar{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    grid-area: Searchbar;
-    margin-right: 10px;
+@import url("https://fonts.googleapis.com/css2?family=Kay+Pho+Du&family=Rye&display=swap");
+
+.Searchbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  grid-area: Searchbar;
+  margin-right: 10px;
 }
 
-form{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 1rem;
+form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 1rem;
 }
 
-.SearchItems{
-    margin-top: 1rem;
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem 0;
-    overflow-y: auto;
+.SearchItems {
+  margin-top: 1rem;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 0;
+  overflow-y: auto;
 }
 
-.SearchItem{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    width: 100%;
-    height: 4rem;
-    outline: none;
-    background-color: var(--secondary-color);
-    border: 1px solid rgba(255, 255, 255, 0.558);
-    border-radius: 5px;
+.SearchItem {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 6rem;
+  outline: none;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
 }
 
 input {
-    width: 100%;
+  width: 100%;
+}
+
+.SearchCardImage {
+  height: 100%;
+}
+
+.CardStats {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+  padding: 0.5rem;
+  align-items: flex-start;
+  color: white;
+}
+
+.CardStats > h3 {
+  font-family: "Kay Pho Du", sans-serif;
+  font-size: 1.15rem;
+  margin: 0;
+}
+
+.CardStats > p {
+  font-family: "Rye", cursive;
+  margin: 0;
+}
+
+.SearchItem:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  animation: fadeIn 0.1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    background-color: transparent;
+  }
+  to {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
 }
