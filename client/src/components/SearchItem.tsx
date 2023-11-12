@@ -9,7 +9,7 @@ function SearchItem({ card }: SearchItemProps) {
   return (
     <button className="SearchItem">
 
-      <img className="SearchCardImage" src={"public/yugioh-piege.png"} alt={card.Nom + "image"} />
+      <img className="SearchCardImage" src={`public/yugioh-${card.Type.toLowerCase()}.png`} alt={card.Nom + "image"} />
       <div className="CardStats">
         <h3>{card.Nom}</h3>
         <p>{card.Type}</p>
