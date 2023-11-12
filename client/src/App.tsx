@@ -21,7 +21,7 @@ function App() {
   return (
     <>
       <Header />
-      <CardInfo />
+      <CardInfo carte={card} />
       <Deck />
       <Searchbar setCard={setCard} cartes={cartes} />
     </>
