@@ -2,7 +2,7 @@ import React from 'react'
 
 function Decklist() {
   return (
-    <div>Decklist</div>
+    <div className='deckList'></div>
   )
 }
 

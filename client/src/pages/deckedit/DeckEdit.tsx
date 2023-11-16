@@ -5,7 +5,7 @@ import './DeckEdit.css'
 
 function DeckEdit() {
   return (
-    <div>
+    <div className='content'>
         <Leaderboard />
         <Decklist />
     </div>
