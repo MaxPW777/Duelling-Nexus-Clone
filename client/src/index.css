@@ -1,5 +1,11 @@
+:root{
+  --primary-color: rgba(255, 255, 255, 0.87);
+  --secondary-color: darkslategray;
+  --header-height: 3rem;
+}
+
 body {
-  color: rgba(255, 255, 255, 0.87);
+  color: var(--primary-color);
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   background-color: #1a1a1a;
   width: 100vw;

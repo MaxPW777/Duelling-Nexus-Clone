@@ -9,7 +9,7 @@ const dbConfig = {
   host: 'localhost',
   user: 'root',
   password: '',
-  database: 'prisonGame',
+  database: 'prisongame',
 };
 
 const pool = createPool(dbConfig);
@@ -17,7 +17,12 @@ const pool = createPool(dbConfig);
 // Enable CORS using the cors middleware
 app.use(cors());
 
-
+app.get('/', (req, res) => {
+  pool.query('SELECT * FROM cartes', (error, results) => {
+    if (error) throw error;
+    res.send(results);
+  });
+});
 
 app.listen(port, () => {
   console.log(`Server is listening on port ${port}`);

@@ -1,7 +1,21 @@
+import Carte from "../interfaces/carte"
 
-function SearchItem() {
+interface SearchItemProps {
+  card?: Carte
+}
+
+function SearchItem({ card }: SearchItemProps) {
+
   return (
-    <div></div>
+    <button  className="SearchItem">
+      
+      <img src={card?.image} alt={card?.Nom + "image"} />
+      <div className="CardInfo">
+        <h3>{card?.Nom}</h3>
+        <p>{card?.Atk}</p>
+        <p>{card?.Def}</p>
+      </div>
+    </button>
   )
 }
 
