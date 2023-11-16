@@ -23,22 +23,9 @@ function App() {
   return (
     <>
       <Header />
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <>
-              <CardInfo carte={card} />
-              <Deck />
-                <Searchbar setCard={setCard} cartes={cartes} />
-            </>
-          }
-        />
-        <Route
-          path="/login"
-          element={<Login />}
-        />
-      </Routes>
+      <CardInfo carte={card} />
+      <Deck />
+      <Searchbar setCard={setCard} cartes={cartes} />
     </>
   )
 }
