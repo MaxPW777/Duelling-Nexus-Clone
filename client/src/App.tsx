@@ -4,6 +4,8 @@ import Deck from './components/Deck'
 import Header from './components/Header'
 import Searchbar from './components/Searchbar'
 import Carte from './interfaces/carte'
+import Login from './components/Login'
+import { Routes, Route } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 
 
@@ -21,9 +23,22 @@ function App() {
   return (
     <>
       <Header />
-      <CardInfo carte={card} />
-      <Deck />
-      <Searchbar setCard={setCard} cartes={cartes} />
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <CardInfo carte={card} />
+              <Deck />
+              <Searchbar setCard={setCard} cartes={cartes} />
+            </>
+          }
+        />
+        <Route
+          path="/login"
+          element={<Login />}
+        />
+      </Routes>
     </>
   )
 }
