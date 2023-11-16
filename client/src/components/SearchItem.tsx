@@ -11,7 +11,7 @@ function SearchItem({ card, setCard }: SearchItemProps) {
   }
 
   return (
-    <button className="SearchItem" onMouseEnter={handleMouseEnter}>
+    <button className="SearchItem" onClick={handleMouseEnter}>
       <img
         className="SearchCardImage"
         src={`public/yugioh-${card.Type.toLowerCase()}.png`}
