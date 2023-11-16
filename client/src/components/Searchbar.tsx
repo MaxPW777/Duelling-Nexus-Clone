@@ -20,15 +20,15 @@ function Searchbar({ cartes, setCard }: SearchbarProps) {
     }
   }, [search]);
 
-  
+
   return (
     <div className="Searchbar">
       <SearchForm setSearch={setSearch} />
       <div className="SearchItems">
         {cartes
           ? cartesFiltrees.map((card: Carte) => (
-              <SearchItem key={card.ID} setCard={memoizedSetCard} card={card} />
-            ))
+            <SearchItem key={card.ID} setCard={memoizedSetCard} card={card} />
+          ))
           : <p> flop </p>}
       </div>
     </div>

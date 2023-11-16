@@ -14,8 +14,6 @@ function SearchForm({ setSearch }: SearchFormProps) {
     setSearch(searchValue.current!.value);
   }
 
-
-
   return (
     <form onSubmit={handleSearch}>
       <input ref={searchValue} type="text" />
