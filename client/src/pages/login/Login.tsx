@@ -1,5 +1,5 @@
-import "./styles/Login.css"
-import Leaderboard from "./components/Leaderboard"
+import "./Login.css"
+import Leaderboard from "../deckedit/components/Leaderboard"
 import LoginForm from "./components/LoginForm"
 function Login() {
   return (
