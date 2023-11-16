@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import DetailsCard from './DetailsCard';
-import CarteDeck from '../interfaces/carteDeck';
+import CarteDeck from '../../../interfaces/carteDeck';
 import '../styles/CardInfo.css';
 import '../styles/MainDeck.css';
 

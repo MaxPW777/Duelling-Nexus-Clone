@@ -1,9 +1,11 @@
 import "../styles/Login.css"
+import Leaderboard from "./components/Leaderboard"
+import LoginForm from "./components/LoginForm"
 function Login() {
   return (
     <div className="content">
       <LoginForm />
-      <LeaderBoard />
+      <Leaderboard />
     </div>
   )
 }

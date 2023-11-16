@@ -1,5 +1,5 @@
 import "../styles/CardInfo.css"
-import Carte from "../interfaces/carte"
+import Carte from "../../../interfaces/carte"
 import DetailsCard from "./DetailsCard";
 interface CardInfoProps {
   carte?: Carte;

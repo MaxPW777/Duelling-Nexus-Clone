@@ -1,4 +1,4 @@
-import Carte from "../interfaces/carte"
+import Carte from "../../../interfaces/carte"
 
 interface SearchItemProps {
   card: Carte;

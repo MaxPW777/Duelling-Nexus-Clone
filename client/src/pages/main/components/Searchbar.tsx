@@ -1,7 +1,7 @@
 import "../styles/Searchbar.css"
 import SearchForm from "./SearchForm"
 import SearchItem from "./SearchItem"
-import Carte from "../interfaces/carte"
+import Carte from "../../../interfaces/carte"
 import { useCallback, useEffect, useState } from 'react';
 
 interface SearchbarProps {

@@ -1,5 +1,5 @@
-import Carte from '../interfaces/carte';
-import CarteDeck from '../interfaces/carteDeck';
+import Carte from '../../../interfaces/carte';
+import CarteDeck from '../../../interfaces/carteDeck';
 export default DetailsCard;
 
 interface DetailsCardComponentProps {
