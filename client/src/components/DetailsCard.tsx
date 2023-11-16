@@ -20,8 +20,8 @@ function DetailsCard({ carte }: DetailsCardComponentProps) { // Composant Carte 
             <div className='DescriptionCard'>{carte.Description}</div>
             <div className='TypeCard'>[{carte.Type}]</div>
             <div className='FooterCard'>{carte.Rarete}</div>
-            <div className='StatsCard'>{carte.Atk}</div>
-            <div className='StatsCard'>{carte.Def}</div>
+            <div className='StatsAtkCard'>{carte.Atk}</div>
+            <div className='StatsDefCard'>/{carte.Def}</div>
         </div>
     )
 }

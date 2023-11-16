@@ -68,3 +68,21 @@
     font-family:'YuGiOhStoneSerif';
     font-weight:300;
 }
+
+.StatsAtkCard{
+    position:absolute;
+    left:72%;
+    top:90%;
+    color:black;
+    font-family:'YuGiOhStoneSerif';
+    font-weight:300;
+}
+
+.StatsDefCard{
+    position:absolute;
+    left:80%;
+    top:90%;
+    color:black;
+    font-family:'YuGiOhStoneSerif';
+    font-weight:300;
+}
