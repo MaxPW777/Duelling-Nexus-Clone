@@ -1,7 +1,10 @@
-
+import "../styles/Login.css"
 function Login() {
   return (
-    <div>Login</div>
+    <div className="content">
+      <LoginForm />
+      <LeaderBoard />
+    </div>
   )
 }
 
