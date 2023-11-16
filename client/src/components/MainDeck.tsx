@@ -1,20 +1,32 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
+import DetailsCard from './DetailsCard';
+import CarteDeck from '../interfaces/carteDeck';
+import '../styles/CardInfo.css';
 import '../styles/MainDeck.css';
 
+
+const deck: CarteDeck[] = [];
+
 function MainDeck() {
-  const [cards, setCards] = useState([]);
+  const [cards, setCards] = useState<CarteDeck[]>();
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetch('http://localhost:3001/');
+        const res = await fetch('http://localhost:3001/deck/1');
         const data = await res.json();
-        setCards(data);
+
+        data.forEach((element : CarteDeck) => {    
+          for (let i = 0; i < element.Quantite; i++) {
+            deck.push(element);
+          }
+        });
+        setCards(deck);
+        console.log(deck);
       } catch (error) {
         console.error('Error fetching data:', error);
       }
     };
-
     fetchData();
   }, []);
 
@@ -25,7 +37,10 @@ function MainDeck() {
 
   return (
     <div className='MainDeck'>
-      {/* Votre rendu de composant ici */}
+      {cards.map((card: CarteDeck) => (
+        console.log(card),
+        <DetailsCard carte={card}/>
+      ))}
     </div>
   );
 }

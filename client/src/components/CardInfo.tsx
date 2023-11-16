@@ -1,5 +1,6 @@
 import "../styles/CardInfo.css"
 import Carte from "../interfaces/carte"
+import DetailsCard from "./DetailsCard";
 interface CardInfoProps {
   carte?: Carte;
 }
@@ -8,7 +9,7 @@ function CardInfo({ carte }: CardInfoProps) {
   return (
     <div className="CardInfo">
       {carte ? (
-        <h3>{carte.Nom}</h3>
+        <DetailsCard carte={carte} />
       ) : (
         <p>Hover on a card to see its stats</p>
       )}

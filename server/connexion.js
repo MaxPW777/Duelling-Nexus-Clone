@@ -24,6 +24,34 @@ app.get('/', (req, res) => {
   });
 });
 
+app.get('/deck/:id', (req, res) => {
+  const id = req.params.id;
+  pool.query(`SELECT
+  cartes.ID AS ID,
+  cartes.Nom AS Nom,
+  cartes.Type AS Type,
+  cartes.Def AS Def,
+  cartes.Atk AS Atk,
+  cartes.Image AS Image,
+  cartes.Description AS Description,
+  cartes.Rarete AS Rarete,
+  cartes_deck.CarteQuantité AS Quantite,
+  decks.ID_deck AS DeckID,
+  decks.Nom_Deck AS DeckNom,
+  decks.Description_deck AS DeckDescription
+FROM
+  cartes_deck
+JOIN
+  cartes ON cartes_deck.CarteID = cartes.ID
+JOIN
+  decks ON cartes_deck.DeckID = decks.ID_deck
+WHERE
+  decks.ID_deck = ${id};`, (error, results) => {
+    if (error) throw error;
+    res.send(results);
+  });
+});
+
 app.listen(port, () => {
   console.log(`Server is listening on port ${port}`);
 });
