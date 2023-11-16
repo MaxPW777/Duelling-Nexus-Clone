@@ -1,4 +1,4 @@
-import "../styles/Login.css"
+import "./styles/Login.css"
 import Leaderboard from "./components/Leaderboard"
 import LoginForm from "./components/LoginForm"
 function Login() {
