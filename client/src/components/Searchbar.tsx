@@ -10,7 +10,6 @@ interface SearchbarProps {
 }
 
 function Searchbar({ cartes, setCard }: SearchbarProps) {
-  console.log(cartes)
   const [search, setSearch] = useState('');
   const [cartesFiltrees, setCartesFiltrees] = useState<Carte[]>(cartes || []);
   const memoizedSetCard = useCallback(setCard, [setCard]);
