@@ -7,7 +7,6 @@ interface DetailsCardComponentProps {
 }
 
 function DetailsCard({ carte }: DetailsCardComponentProps) { // Composant Carte avec les détails de la carte
-    console.log(carte);
     return (
 
         <div className='CardImage' data-id={carte.ID} >

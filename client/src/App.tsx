@@ -7,6 +7,7 @@ import Carte from './interfaces/carte'
 import Login from './components/Login'
 import { Routes, Route } from 'react-router-dom'
 import { useEffect, useState } from 'react'
+import React from 'react'
 
 
 
@@ -19,7 +20,6 @@ function App() {
       .then(res => res.json())
       .then(data => setCartes(data))
   }, [])
-
   return (
     <>
       <Header />
@@ -30,7 +30,7 @@ function App() {
             <>
               <CardInfo carte={card} />
               <Deck />
-              <Searchbar setCard={setCard} cartes={cartes} />
+                <Searchbar setCard={setCard} cartes={cartes} />
             </>
           }
         />

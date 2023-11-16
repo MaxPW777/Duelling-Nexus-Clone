@@ -34,7 +34,6 @@ app.get('/deck/:id', (req, res) => {
   cartes.Atk AS Atk,
   cartes.Image AS Image,
   cartes.Description AS Description,
-  cartes.Rarete AS Rarete,
   cartes_deck.CarteQuantité AS Quantite,
   decks.ID_deck AS DeckID,
   decks.Nom_Deck AS DeckNom,

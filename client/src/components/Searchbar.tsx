@@ -5,11 +5,12 @@ import Carte from "../interfaces/carte"
 import { useCallback, useEffect, useState } from 'react';
 
 interface SearchbarProps {
-  cartes?: Carte[];
+  cartes: Carte[];
   setCard: (card: Carte) => void;
 }
 
 function Searchbar({ cartes, setCard }: SearchbarProps) {
+  console.log(cartes)
   const [search, setSearch] = useState('');
   const [cartesFiltrees, setCartesFiltrees] = useState<Carte[]>(cartes || []);
   const memoizedSetCard = useCallback(setCard, [setCard]);
@@ -19,6 +20,8 @@ function Searchbar({ cartes, setCard }: SearchbarProps) {
       setCartesFiltrees(cartes.filter((card: Carte) => card.Nom.toLowerCase().includes(search.toLowerCase())));
     }
   }, [search]);
+
+  
   return (
     <div className="Searchbar">
       <SearchForm setSearch={setSearch} />

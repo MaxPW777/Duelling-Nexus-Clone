@@ -22,7 +22,6 @@ function MainDeck() {
           }
         });
         setCards(deck);
-        console.log(deck);
       } catch (error) {
         console.error('Error fetching data:', error);
       }
@@ -37,9 +36,8 @@ function MainDeck() {
 
   return (
     <div className='MainDeck'>
-      {cards.map((card: CarteDeck) => (
-        console.log(card),
-        <DetailsCard carte={card}/>
+      {cards.map((card: CarteDeck, index: number) => ( 
+        <DetailsCard key={index} carte={card}/>
       ))}
     </div>
   );
