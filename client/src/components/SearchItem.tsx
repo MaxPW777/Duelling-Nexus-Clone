@@ -1,22 +1,30 @@
 import Carte from "../interfaces/carte"
 
 interface SearchItemProps {
-  card?: Carte
+  card: Carte;
+  setCard: (card: Carte) => void;
 }
 
-function SearchItem({ card }: SearchItemProps) {
+function SearchItem({ card, setCard }: SearchItemProps) {
+  function handleMouseEnter() {
+    setCard(card);
+  }
 
   return (
-    <button  className="SearchItem">
-      
-      <img src={card?.image} alt={card?.Nom + "image"} />
-      <div className="CardInfo">
-        <h3>{card?.Nom}</h3>
-        <p>{card?.Atk}</p>
-        <p>{card?.Def}</p>
+    <button className="SearchItem" onMouseEnter={handleMouseEnter}>
+      <img
+        className="SearchCardImage"
+        src={`public/yugioh-${card.Type.toLowerCase()}.png`}
+        alt={card.Nom + "image"}
+      />
+      <div className="CardStats">
+        <h3>{card.Nom}</h3>
+        <p>{card.Type}</p>
+        <div>{card.Atk && card.Atk + " / " + card.Def}</div>
       </div>
     </button>
-  )
+  );
 }
+
 
 export default SearchItem
