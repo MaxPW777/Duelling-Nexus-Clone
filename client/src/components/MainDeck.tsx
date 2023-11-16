@@ -23,8 +23,6 @@ function MainDeck() {
     return null;
   }
 
-  console.log(cards[0]);
-
   return (
     <div className='MainDeck'>
       {/* Votre rendu de composant ici */}
