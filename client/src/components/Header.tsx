@@ -12,7 +12,7 @@ function Header() {
             <IoLogInOutline />
           </a>
         }
-        <h1>PRYugiohSON</h1>
+        <h2>PRYugiohSON</h2>
       </div>
       <p>Editing Deck:</p>
       <div>
