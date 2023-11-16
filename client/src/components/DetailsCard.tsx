@@ -1,8 +1,9 @@
 import Carte from '../interfaces/carte';
+import CarteDeck from '../interfaces/carteDeck';
 export default DetailsCard;
 
 interface DetailsCardComponentProps {
-    carte: Carte;
+    carte: Carte | CarteDeck;
 }
 
 function DetailsCard({ carte }: DetailsCardComponentProps) { // Composant Carte avec les détails de la carte

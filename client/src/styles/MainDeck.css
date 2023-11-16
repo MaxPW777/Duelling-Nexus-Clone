@@ -4,4 +4,11 @@
     border-radius: 5px;
     width: 100%;
     height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+
+    .CardImage{
+        width: 5rem;
+        height: auto;
+    }
 }

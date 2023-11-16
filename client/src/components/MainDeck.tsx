@@ -1,9 +1,14 @@
 import { useEffect, useState } from 'react';
+import DetailsCard from './DetailsCard';
+import CarteDeck from '../interfaces/carteDeck';
+import '../styles/CardInfo.css';
 import '../styles/MainDeck.css';
-const deck: any[] = [];
+
+
+const deck: CarteDeck[] = [];
 
 function MainDeck() {
-  const [cards, setCards] = useState<any>();
+  const [cards, setCards] = useState<CarteDeck[]>();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -11,12 +16,13 @@ function MainDeck() {
         const res = await fetch('http://localhost:3001/deck/1');
         const data = await res.json();
 
-        data.forEach((element: { Quantite: number; }) => {    
+        data.forEach((element : CarteDeck) => {    
           for (let i = 0; i < element.Quantite; i++) {
             deck.push(element);
           }
         });
         setCards(deck);
+        console.log(deck);
       } catch (error) {
         console.error('Error fetching data:', error);
       }
@@ -31,9 +37,9 @@ function MainDeck() {
 
   return (
     <div className='MainDeck'>
-      {cards.map((card: any) => (
+      {cards.map((card: CarteDeck) => (
         console.log(card),
-        <p>{card.CarteNom}</p>
+        <DetailsCard carte={card}/>
       ))}
     </div>
   );

@@ -27,15 +27,14 @@ app.get('/', (req, res) => {
 app.get('/deck/:id', (req, res) => {
   const id = req.params.id;
   pool.query(`SELECT
-  cartes_deck.ID AS CarteDeckID,
-  cartes.ID AS CarteID,
-  cartes.Nom AS CarteNom,
-  cartes.Type AS CarteType,
-  cartes.Def AS CarteDef,
-  cartes.Atk AS CarteAtk,
-  cartes.Image AS CarteImage,
-  cartes.Description AS CarteDescription,
-  cartes.Rareté AS CarteRarete,
+  cartes.ID AS ID,
+  cartes.Nom AS Nom,
+  cartes.Type AS Type,
+  cartes.Def AS Def,
+  cartes.Atk AS Atk,
+  cartes.Image AS Image,
+  cartes.Description AS Description,
+  cartes.Rareté AS Rareté,
   cartes_deck.CarteQuantité AS Quantite,
   decks.ID_deck AS DeckID,
   decks.Nom_Deck AS DeckNom,
