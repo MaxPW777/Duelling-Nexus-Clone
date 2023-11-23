@@ -4,6 +4,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     width: 40%;
+    max-width: 50vw;
     height: 60%;
     display: flex;
     justify-content: space-around;
@@ -12,9 +13,10 @@
     background-color: rgba(255, 255, 255, 0.1);
     padding: 1rem;
     border-radius: 1rem;
+    
 }
 
-form{
+.loginForm{
     width: auto;
     height: 90%;
     display: flex;
@@ -52,7 +54,7 @@ label{
     
 }
 
-input{
+.formText > input{
     width: 80%;
     height: 30%;
     border-radius: 0.5rem;
