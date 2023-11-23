@@ -13,8 +13,6 @@ function Decklist() {
   const idFromLocalStorage: string = localStorage.getItem('userId') || '';
   // Déchiffrez l'ID depuis le localStorage
   const decryptedUserId = CryptoJS.AES.decrypt(idFromLocalStorage, 'your-secret-key').toString(CryptoJS.enc.Utf8);
-  console.log('Déchiffré :', decryptedUserId);
-
   const [deck, setDeck] = useState<Deck[]>([])
 
   useEffect(() => {
@@ -23,13 +21,12 @@ function Decklist() {
       .then(data => setDeck(data))
   }, [])
 
-  console.log('http://localhost:3001/deckID/' + decryptedUserId)
   return (
     <div className='deckList'>
       {
         deck && deck.map((deck) => {
           return (
-            <Link to={'/'} className='deck' key={deck.DeckID}>
+            <Link to={'/'} onClick={() => {localStorage.setItem("deckID", deck.DeckID.toString()) }} className='deck' key={deck.DeckID}>
               <h3>{deck.DeckNom}</h3>
               <p>{deck.DeckDescription}</p>
             </Link>
