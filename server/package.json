@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "js server using express",
   "main": "connexion.ts",
-  "type": "module" ,
+  "type": "module",
   "scripts": {
     "start": "node connexion.js"
   },
@@ -14,6 +14,7 @@
   "author": "Ludo",
   "license": "MIT",
   "dependencies": {
+    "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "express": "^4.18.2",
     "mysql": "^2.18.1"
