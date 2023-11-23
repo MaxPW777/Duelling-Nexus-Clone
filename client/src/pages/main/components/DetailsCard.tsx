@@ -8,7 +8,6 @@ interface DetailsCardComponentProps {
 }
 
 function DetailsCard({ carte, index }: DetailsCardComponentProps) {
-    console.log(carte);
     if ('Quantite' in carte) {
         return (
             <div className='CardImageDeck' data-id={carte.ID} style={{ transform: `translateX(-${40 * index}px)` }}>
