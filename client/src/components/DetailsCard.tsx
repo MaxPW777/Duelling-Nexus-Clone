@@ -7,7 +7,7 @@ interface DetailsCardComponentProps {
     index: number;
 }
 
-function DetailsCard({ carte, index}: DetailsCardComponentProps) {
+function DetailsCard({ carte, index }: DetailsCardComponentProps) {
     console.log(carte);
     if ('Quantite' in carte) {
         return (
@@ -18,7 +18,12 @@ function DetailsCard({ carte, index}: DetailsCardComponentProps) {
                     alt={carte.Nom + "image"}
                 />
                 <div className='HeaderCardDeck'>{carte.Nom} </div>
-                <div className='BodyCardDeck'>{carte.image}</div>
+                <div >
+                    <img
+                        className='BodyCardDeck'
+                        src={`public/${carte.Image}`}
+                    />
+                </div>
                 <div className='DescriptionCardDeck'>{carte.Description}</div>
                 <div className='TypeCardDeck'>[{carte.Type}]</div>
                 <div className='FooterCardDeck'>{carte.Rarete}</div>
@@ -35,7 +40,12 @@ function DetailsCard({ carte, index}: DetailsCardComponentProps) {
                     alt={carte.Nom + "image"}
                 />
                 <div className='HeaderCard'>{carte.Nom} </div>
-                <div className='BodyCard'>{carte.image}</div>
+                <div>
+                <img
+                        className='BodyCard'
+                        src={`public/${carte.Image}`}
+                    />
+                </div>
                 <div className='DescriptionCard'>{carte.Description}</div>
                 <div className='TypeCard'>[{carte.Type}]</div>
                 <div className='FooterCard'>{carte.Rarete}</div>

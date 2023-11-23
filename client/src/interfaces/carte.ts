@@ -4,7 +4,7 @@ export default interface Carte {
   Type: string;
   Atk: number;
   Def: number;
-  image: string;
+  Image: string;
   Description: string;
   Rarete: string;
 }

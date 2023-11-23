@@ -33,8 +33,11 @@
 }
 .BodyCard{
     position:absolute;
-    left:20%;
-    top:15%;
+    left:12.5%;
+    top:18.5%;
+    width: 75%;
+    height:52%;
+    z-index: 10;
 
 }
 .DescriptionCard{
