@@ -1,8 +1,6 @@
-import React from 'react'
-
 function Leaderboard() {
   return (
-    <div>Leaderboard</div>
+    <div className='leaderboard'><h3>Leaderboard</h3></div>
   )
 }
 
