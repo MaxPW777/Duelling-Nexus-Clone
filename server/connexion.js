@@ -16,6 +16,7 @@ const pool = createPool(dbConfig);
 
 // Enable CORS using the cors middleware
 app.use(cors());
+app.use(express.json());
 
 app.get('/', (req, res) => {
   pool.query('SELECT * FROM cartes', (error, results) => {
@@ -56,10 +57,34 @@ app.get('/deck', (req, res) => {
   decks.ID_deck AS DeckID,
   decks.Nom_Deck AS DeckNom,
   decks.Description_deck AS DeckDescription
-FROM
+  FROM
   decks`, (error, results) => {
     if (error) throw error;
     res.send(results);
+    if (!userData || !userData.username) {
+      res.status(400).json({ success: false, message: 'Données utilisateur manquantes' });
+      return;
+    }
+  })
+});
+
+app.post('/login', (req, res) => {
+  const userData = req.body.user;
+  const user = userData.username;
+
+  pool.query('SELECT * FROM joueurs WHERE NOM = ?', [user], (error, results) => {
+    if (error) {
+      console.error(error);
+      res.status(500).send('Erreur interne du serveur');
+      return;
+    }
+    if (results.length > 0) {
+      // L'utilisateur existe dans la base de données
+      res.json({ success: true, user: results[0] });
+    } else {
+      // L'utilisateur n'existe pas dans la base de données
+      res.json({ success: false, message: 'Utilisateur non trouvé' });
+    }
   });
 });
 
