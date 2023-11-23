@@ -4,10 +4,7 @@ import Deck from './components/Deck'
 import Header from './components/Header'
 import Searchbar from './components/Searchbar'
 import Carte from '../../interfaces/carte'
-import Login from '../login/Login'
-import { Routes, Route } from 'react-router-dom'
 import { useEffect, useState } from 'react'
-import React from 'react'
 
 
 
