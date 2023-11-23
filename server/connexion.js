@@ -51,6 +51,19 @@ WHERE
   });
 });
 
+app.get('/deck', (req, res) => {
+  pool.query(`SELECT
+  decks.ID_deck AS DeckID,
+  decks.Nom_Deck AS DeckNom,
+  decks.Description_deck AS DeckDescription
+FROM
+  decks`, (error, results) => {
+    if (error) throw error;
+    res.send(results);
+  });
+});
+
+
 app.listen(port, () => {
   console.log(`Server is listening on port ${port}`);
 });
