@@ -27,7 +27,7 @@ function LoginForm() {
                 // Chiffrez l'ID de l'utilisateur avant de le stocker dans le localStorage
                 const encryptedUserId = CryptoJS.AES.encrypt(data.user.ID.toString(), 'your-secret-key').toString();
                 localStorage.setItem('userId', encryptedUserId);          
-                // Récupérez l'ID chiffré depuis le localStorage
+                window.location.href = "/edit";
             }
             
         });
