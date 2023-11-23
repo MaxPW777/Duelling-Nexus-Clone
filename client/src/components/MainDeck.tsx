@@ -37,9 +37,8 @@ function MainDeck() {
 
   return (
     <div className='MainDeck'>
-      {cards.map((card: CarteDeck) => (
-        console.log(card),
-        <DetailsCard carte={card}/>
+      {cards.map((card: CarteDeck, index:number) => (
+        <DetailsCard key={index} carte={card} index={index} />
       ))}
     </div>
   );
