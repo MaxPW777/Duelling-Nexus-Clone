@@ -9,12 +9,13 @@ function CardInfo({ carte }: CardInfoProps) {
   return (
     <div className="CardInfo">
       {carte ? (
-        <DetailsCard carte={carte} />
+        <DetailsCard carte={carte} index={0} />
       ) : (
         <p>Hover on a card to see its stats</p>
       )}
     </div>
   )
 }
+
 
 export default CardInfo
