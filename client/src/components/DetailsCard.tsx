@@ -3,12 +3,11 @@ import CarteDeck from '../interfaces/carteDeck';
 export default DetailsCard;
 
 interface DetailsCardComponentProps {
-    carte: Carte | CarteDeck;
+    carte: Carte | CarteDeck ;
     index: number;
 }
 
 function DetailsCard({ carte, index }: DetailsCardComponentProps) {
-    console.log(carte);
     if ('Quantite' in carte) {
         return (
             <div className='CardImageDeck' data-id={carte.ID} style={{ transform: `translateX(-${40 * index}px)` }}>
@@ -41,7 +40,7 @@ function DetailsCard({ carte, index }: DetailsCardComponentProps) {
                 />
                 <div className='HeaderCard'>{carte.Nom} </div>
                 <div>
-                <img
+                    <img
                         className='BodyCard'
                         src={`public/${carte.Image}`}
                     />
