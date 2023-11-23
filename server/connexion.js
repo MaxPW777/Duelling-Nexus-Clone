@@ -52,19 +52,18 @@ WHERE
   });
 });
 
-app.get('/deck', (req, res) => {
+app.get('/deckID/:id', (req, res) => {
+  const id = req.params.id;
   pool.query(`SELECT
   decks.ID_deck AS DeckID,
   decks.Nom_Deck AS DeckNom,
   decks.Description_deck AS DeckDescription
   FROM
-  decks`, (error, results) => {
+  decks
+  WHERE
+  decks.ID_deck = ${id};`, (error, results) => {
     if (error) throw error;
     res.send(results);
-    if (!userData || !userData.username) {
-      res.status(400).json({ success: false, message: 'Données utilisateur manquantes' });
-      return;
-    }
   })
 });
 
