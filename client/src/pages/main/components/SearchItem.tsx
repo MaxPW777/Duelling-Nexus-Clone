@@ -12,11 +12,24 @@ function SearchItem({ card, setCard }: SearchItemProps) {
 
   return (
     <button className="SearchItem" onClick={handleMouseEnter}>
-      <img
-        className="SearchCardImage"
-        src={`public/yugioh-${card.Type.toLowerCase()}.png`}
-        alt={card.Nom + "image"}
-      />
+      <div className="SearchCardContainer">
+        <div className='CardImageSearch' data-id={card.ID}>
+          <img
+            className="CardContainerSearch"
+            src={`public/yugioh-${card.Type.toLowerCase()}.png`}
+            alt={card.Nom + "image"}
+          />
+          <div className='HeaderCardSearch'>{card.Nom} </div>
+          <div>
+            <img
+              className='BodyCardSearch'
+              src={`public/${card.Image}`}
+            />
+          </div>
+          <div className='TypeCardSearch'>[{card.Type}]</div>
+          <div className='DescriptionCardSearch'>{card.Description}</div>
+        </div>
+      </div>
       <div className="CardStats">
         <h3>{card.Nom}</h3>
         <p>{card.Type}</p>

@@ -3,12 +3,11 @@ import CarteDeck from '../../../interfaces/carteDeck';
 export default DetailsCard;
 
 interface DetailsCardComponentProps {
-    carte: Carte | CarteDeck;
+    carte: Carte | CarteDeck ;
     index: number;
 }
 
-function DetailsCard({ carte, index}: DetailsCardComponentProps) {
-    console.log(carte);
+function DetailsCard({ carte, index }: DetailsCardComponentProps) {
     if ('Quantite' in carte) {
         return (
             <div className='CardImageDeck' data-id={carte.ID} style={{ transform: `translateX(-${40 * index}px)` }}>
@@ -18,7 +17,12 @@ function DetailsCard({ carte, index}: DetailsCardComponentProps) {
                     alt={carte.Nom + "image"}
                 />
                 <div className='HeaderCardDeck'>{carte.Nom} </div>
-                <div className='BodyCardDeck'>{carte.image}</div>
+                <div >
+                    <img
+                        className='BodyCardDeck'
+                        src={`public/${carte.Image}`}
+                    />
+                </div>
                 <div className='DescriptionCardDeck'>{carte.Description}</div>
                 <div className='TypeCardDeck'>[{carte.Type}]</div>
                 <div className='FooterCardDeck'>{carte.Rarete}</div>
@@ -35,7 +39,12 @@ function DetailsCard({ carte, index}: DetailsCardComponentProps) {
                     alt={carte.Nom + "image"}
                 />
                 <div className='HeaderCard'>{carte.Nom} </div>
-                <div className='BodyCard'>{carte.image}</div>
+                <div>
+                    <img
+                        className='BodyCard'
+                        src={`public/${carte.Image}`}
+                    />
+                </div>
                 <div className='DescriptionCard'>{carte.Description}</div>
                 <div className='TypeCard'>[{carte.Type}]</div>
                 <div className='FooterCard'>{carte.Rarete}</div>
