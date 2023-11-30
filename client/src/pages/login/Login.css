@@ -23,7 +23,7 @@
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    button{
+    .loginSubmitButton{
         width: 50%;
         height: 20%;
         border-radius: 0.5rem;

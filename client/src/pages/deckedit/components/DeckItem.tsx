@@ -1,10 +1,12 @@
 import React from 'react'
 
 const decks = [[],[]];
-
-function DeckItem() {
+interface DeckItemProps {
+  deckName: string;
+}
+function DeckItem({ deckName }: DeckItemProps) {
   return (
-    <div>DeckItem</div>
+    <div>{deckName}</div>
   )
 }
 

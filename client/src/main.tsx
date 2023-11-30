@@ -4,7 +4,7 @@ import App from './pages/main/App.tsx'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './index.css'
 import Login from './pages/login/Login.tsx'
-import DeckEdit from './pages/deckedit/deckedit.tsx'
+import DeckEdit from './pages/deckedit/DeckEdit.tsx'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <BrowserRouter>
