@@ -4,28 +4,40 @@ import Deck from './components/Deck'
 import Header from './components/Header'
 import Searchbar from './components/Searchbar'
 import Carte from '../../interfaces/carte'
-import Login from '../login/Login'
-import { Routes, Route } from 'react-router-dom'
 import { useEffect, useState } from 'react'
-import React from 'react'
-
+import CarteDeck from '../../interfaces/carteDeck'
 
 
 
 function App() {
   const [card, setCard] = useState<Carte>()
-  const [cartes, setCartes] = useState<Carte[]>([])
+  const [cards, setCards] = useState<CarteDeck[]>([])
+  let deck: CarteDeck[] = [];
+
   useEffect(() => {
-    fetch('http://localhost:3001/')
-      .then(res => res.json())
-      .then(data => setCartes(data))
-  }, [])
+    const fetchData = async () => {
+      try {
+        const res = await fetch('http://localhost:3001/deck/1');
+        const data = await res.json();
+
+        data.forEach((element : CarteDeck) => {    
+          for (let i = 0; i < element.Quantite; i++) {
+            deck.push(element);
+          }
+        });
+        setCards(deck);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+    fetchData();
+  }, []);
   return (
     <>
       <Header />
       <CardInfo carte={card} />
-      <Deck />
-      <Searchbar setCard={setCard} cartes={cartes} />
+      <Deck cartes={cards} />
+      <Searchbar setCard={setCard} cartes={cards} />
     </>
   )
 }

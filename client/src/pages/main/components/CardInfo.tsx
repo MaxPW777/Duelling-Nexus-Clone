@@ -3,14 +3,14 @@ import Carte from "../../../interfaces/carte"
 import DetailsCard from "./DetailsCard";
 interface CardInfoProps {
   carte?: Carte;
-  index : number;
+  index? : number;
 }
 
 function CardInfo({ carte, index }: CardInfoProps) {
   return (
     <div className="CardInfo">
       {carte ? (
-        <DetailsCard index={index} carte={carte} />
+        <DetailsCard index={index? index : 0} carte={carte} />
       ) : (
         <p>Hover on a card to see its stats</p>
       )}
