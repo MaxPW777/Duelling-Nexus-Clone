@@ -14,6 +14,13 @@ function Searchbar({ cartes, setCard }: SearchbarProps) {
   const [cartesFiltrees, setCartesFiltrees] = useState<Carte[]>(cartes || []);
   const memoizedSetCard = useCallback(setCard, [setCard]);
 
+
+  useEffect(() => {
+    fetch('http://localhost:3001/')
+      .then(res => res.json())
+      .then(data => setCartesFiltrees(data))
+  }, [])
+
   useEffect(() => {
     if (cartes) {
       setCartesFiltrees(cartes.filter((card: Carte) => card.Nom.toLowerCase().includes(search.toLowerCase())));

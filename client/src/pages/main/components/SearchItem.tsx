@@ -6,12 +6,9 @@ interface SearchItemProps {
 }
 
 function SearchItem({ card, setCard }: SearchItemProps) {
-  const handleClick = (e) => {
-    if (e.type === 'click') {
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) =>{
       setCard(card);
-    } else if (e.type === 'contextmenu') {
-      setCards
-    }
+    
   };
 
   return (
