@@ -1,5 +1,9 @@
 .CardInfo{
     margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
 }
 
 @font-face {
@@ -11,8 +15,6 @@
 .CardImage{
     width:65%;
     height:80%;
-    margin-top:5%;
-    margin-left:10%;
     position:relative;
 }
 

@@ -5,6 +5,8 @@ import '../styles/CardInfo.css';
 import '../styles/MainDeck.css';
 
 
+
+
 const deck: CarteDeck[] = [];
 
 function MainDeck() {

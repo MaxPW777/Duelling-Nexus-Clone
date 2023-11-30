@@ -6,12 +6,16 @@ interface SearchItemProps {
 }
 
 function SearchItem({ card, setCard }: SearchItemProps) {
-  function handleMouseEnter() {
-    setCard(card);
-  }
+  const handleClick = (e) => {
+    if (e.type === 'click') {
+      setCard(card);
+    } else if (e.type === 'contextmenu') {
+      setCards
+    }
+  };
 
   return (
-    <button className="SearchItem" onClick={handleMouseEnter}>
+    <button className="SearchItem" onContextMenu={handleClick} onClick={handleClick}>
       <div className="SearchCardContainer">
         <div className='CardImageSearch' data-id={card.ID}>
           <img
