@@ -1,9 +1,11 @@
 .CardInfo{
     margin-left: 10px;
+    padding-top: 3%;
+    padding-left:3%;
     display: flex;
+    justify-content: flex-start;
     flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
+    
 }
 
 @font-face {
@@ -14,8 +16,16 @@
 
 .CardImage{
     width:65%;
-    height:80%;
+    height:85%;
     position:relative;
+}
+
+.CardInfoDescription{
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    padding-top: 3%;
+
 }
 
 .CardContainer{

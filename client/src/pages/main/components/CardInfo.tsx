@@ -14,6 +14,11 @@ function CardInfo({ carte, index }: CardInfoProps) {
       ) : (
         <p>Hover on a card to see its stats</p>
       )}
+      {carte ? (
+        <div className="CardInfoDescription">{carte.Description}</div>
+      ) : (
+        <p></p>
+      )}
     </div>
   )
 }
