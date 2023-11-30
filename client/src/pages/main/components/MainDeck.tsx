@@ -5,31 +5,13 @@ import '../styles/CardInfo.css';
 import '../styles/MainDeck.css';
 
 
+interface MainDeckProps {
+  cartes: CarteDeck[];
+}
 
+function MainDeck({cartes}: MainDeckProps) {
 
-const deck: CarteDeck[] = [];
-
-function MainDeck() {
-  const [cards, setCards] = useState<CarteDeck[]>();
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const res = await fetch('http://localhost:3001/deck/1');
-        const data = await res.json();
-
-        data.forEach((element : CarteDeck) => {    
-          for (let i = 0; i < element.Quantite; i++) {
-            deck.push(element);
-          }
-        });
-        setCards(deck);
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
-    };
-    fetchData();
-  }, []);
+  let cards = cartes;
 
   // Si les données ne sont pas disponibles, n'affichez pas le composant
   if (!cards || cards.length === 0) {
