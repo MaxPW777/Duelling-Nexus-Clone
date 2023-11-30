@@ -3,14 +3,18 @@ import CarteDeck from '../../../interfaces/carteDeck';
 export default DetailsCard;
 
 interface DetailsCardComponentProps {
-    carte: Carte | CarteDeck ;
+    carte: Carte | CarteDeck;
     index: number;
 }
 
 function DetailsCard({ carte, index }: DetailsCardComponentProps) {
+    const cardsPerGroup = 6;
+    const groupIndex = Math.floor(index / cardsPerGroup);
+    const offsetHorizontal = (index % cardsPerGroup) + 1;
+    const offsetVertical = groupIndex * 1; // Décalage vertical par groupe de six cartes
     if ('Quantite' in carte) {
         return (
-            <div className='CardImageDeck' data-id={carte.ID} style={{ transform: `translateX(-${40 * index}px)` }}>
+            <div className='CardImageDeck' data-id={carte.ID} style={{ transform: ` translate(-${40 * offsetHorizontal}px, -${50 * offsetVertical}px)`  }}>
                 <img
                     className="CardContainerDeck"
                     src={`public/yugioh-${carte.Type.toLowerCase()}.png`}
