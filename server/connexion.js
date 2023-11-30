@@ -51,6 +51,13 @@ WHERE
     res.send(results);
   });
 });
+app.get('/deckName/:id', (req, res) => {
+  const id = req.params.id;
+  pool.query(`SELECT Nom_Deck FROM decks WHERE PlayerID = ${id};`, (error, results) => {
+    if (error) throw error;
+    res.send(results);
+  });
+});
 app.post('/login', (req, res) => {
   const userData = req.body.user;
 
