@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 const decks = [[],[]];
 interface DeckItemProps {
@@ -6,7 +7,7 @@ interface DeckItemProps {
 }
 function DeckItem({ deckName }: DeckItemProps) {
   return (
-    <div>{deckName}</div>
+    <Link to={'/'}>{deckName}</Link>
   )
 }
 

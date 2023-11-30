@@ -12,7 +12,7 @@ function SearchItem({ card, setCard }: SearchItemProps) {
   };
 
   return (
-    <button className="SearchItem" onContextMenu={handleClick} onClick={handleClick}>
+    <button className="SearchItem" onContextMenu={handleClick} onMouseEnter={handleClick}>
       <div className="SearchCardContainer">
         <div className='CardImageSearch' data-id={card.ID}>
           <img
