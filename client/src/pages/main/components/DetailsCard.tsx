@@ -14,7 +14,7 @@ function DetailsCard({ carte, index }: DetailsCardComponentProps) {
     const offsetVertical = groupIndex * 1; // Décalage vertical par groupe de six cartes
     if ('Quantite' in carte) {
         return (
-            <div className='CardImageDeck' data-id={carte.ID} style={{ transform: ` translate(-${40 * offsetHorizontal}px, -${50 * offsetVertical}px)`  }}>
+            <div className='CardImageDeck' data-id={carte.ID} style={{ transform: ` translate(-${15 * offsetHorizontal}px, -${10 * offsetVertical}px)`  }} >
                 <img
                     className="CardContainerDeck"
                     src={`public/yugioh-${carte.Type.toLowerCase()}.png`}
